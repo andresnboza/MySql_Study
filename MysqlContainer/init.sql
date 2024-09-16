@@ -111,3 +111,38 @@ INSERT INTO User (FirstName, LastName, Email, Status, City, Country, Age, Occupa
 ('Sophie', 'Young', 'sophie.young@example.com', 'Inactive', 'Buenos Aires', 'Argentina', 27, 'Consultant', '2020-08-25'),
 ('James', 'Nelson', 'james.nelson@example.com', 'Active', 'Stockholm', 'Sweden', 34, 'Data Analyst', '2019-11-12'),
 ('Chloe', 'Reed', 'chloe.reed@example.com', 'Inactive', 'Singapore', 'Singapore', 30, 'Designer', '2017-05-08');
+
+
+
+CREATE TABLE IF NOT EXISTS `Order` (
+    OrderId INT AUTO_INCREMENT PRIMARY KEY,
+    UserId INT,
+    OrderDate DATE,
+    OrderAmount DECIMAL(10, 2),
+    ShippingAddress VARCHAR(255),
+    Status VARCHAR(20),
+    FOREIGN KEY (UserId) REFERENCES User(id)
+);
+
+
+INSERT INTO `Order` (UserId, OrderDate, OrderAmount, ShippingAddress, Status) VALUES
+(1, '2024-01-15', 250.50, '123 Main St, New York, USA', 'Shipped'),
+(2, '2024-02-10', 125.99, '456 Elm St, Los Angeles, USA', 'Processing'),
+(3, '2024-03-05', 325.75, '789 Oak St, London, UK', 'Delivered'),
+(4, '2024-04-20', 450.00, '101 Pine St, Toronto, Canada', 'Cancelled'),
+(5, '2024-05-15', 89.99, '202 Maple St, San Francisco, USA', 'Shipped'),
+(6, '2024-06-10', 199.99, '303 Cedar St, Sydney, Australia', 'Processing'),
+(7, '2024-07-01', 299.99, '404 Birch St, Chicago, USA', 'Delivered'),
+(8, '2024-08-12', 150.00, '505 Walnut St, Barcelona, Spain', 'Shipped'),
+(9, '2024-09-25', 99.95, '606 Willow St, Berlin, Germany', 'Processing'),
+(10, '2024-10-30', 475.25, '707 Ash St, Paris, France', 'Delivered'),
+(11, '2024-11-11', 150.50, '808 Spruce St, Rome, Italy', 'Cancelled'),
+(12, '2024-12-05', 180.99, '909 Redwood St, Dubai, UAE', 'Processing'),
+(13, '2024-01-18', 525.00, '1010 Palm St, Melbourne, Australia', 'Shipped'),
+(14, '2024-02-22', 225.49, '1111 Cypress St, Cape Town, South Africa', 'Delivered'),
+(15, '2024-03-17', 310.75, '1212 Fir St, Buenos Aires, Argentina', 'Processing'),
+(16, '2024-04-10', 410.99, '1313 Poplar St, Tokyo, Japan', 'Shipped'),
+(17, '2024-05-25', 150.99, '1414 Alder St, Athens, Greece', 'Delivered'),
+(18, '2024-06-15', 120.49, '1515 Magnolia St, Hong Kong, China', 'Processing'),
+(19, '2024-07-28', 85.75, '1616 Dogwood St, Madrid, Spain', 'Shipped'),
+(20, '2024-08-10', 275.49, '1717 Redwood St, Vancouver, Canada', 'Delivered');

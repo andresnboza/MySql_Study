@@ -11,3 +11,6 @@ git:
 	git add .
 	git commit -m "update"
 	git push
+
+fillDatabase:
+	python3 insert_orders.py
