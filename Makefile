@@ -7,10 +7,5 @@ clean:
 	docker rm my-mysql-container
 	docker rmi my-mysql-image
 
-git:
-	git add .
-	git commit -m "update"
-	git push
-
 fillDatabase:
 	python3 insert_orders.py
